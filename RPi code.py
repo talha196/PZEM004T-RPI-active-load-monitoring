@@ -6,7 +6,7 @@ import serial
 ##import atexit
 
 #from apscheduler.scheduler import Scheduler
-
+#defining the serial port
 ser = serial.Serial( port='/dev/ttyS0',
        baudrate = 9600,
        parity=serial.PARITY_NONE,
@@ -14,6 +14,7 @@ ser = serial.Serial( port='/dev/ttyS0',
        bytesize=serial.EIGHTBITS,
        timeout=1
        )
+#create a flask object
 app = Flask(__name__)
 
 @app.route('/jquery.js')
