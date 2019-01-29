@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>BGreen - </title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+</head>
+
+<body>
+    <div id="content">
+
+
+<!DOCTYPE html>
+   <head>
+      <title>A B C</title>     
+   </head>
+   <body background="bgreen.png">
+
+   <script>
+	window.setInterval(function(){
+		$.get("/data", function(data, status){
+			var data_list = data.split(',');
+        		$('#device1_voltage').html('Voltage = ' + data_list[0]);
+			$('#device1_power').html('Current = ' +data_list[1]);
+			$('#device1_energy').html('Power = ' +data_list[2]);
+			$('#device2_voltage').html('Voltage = ' +data_list[3]);
+			$('#device2_power').html('Power = ' +data_list[4]);
+			$('#device2_energy').html('Power = ' +data_list[5]);
+    		});
+	},2500);
+
+	function device(id, mode){
+		$.get('/device'+id+'_'+mode, function(data, status){});
+	}
+   </script> 	
+   <script src="/jquery.js"></script>
+ 
+
+<body>
+
+   <div class="container" style="width:95%;">
+      <h1>BGreen</h1>
+	<div class='row'>
+	    <div class='col-md-6'>
+	        <h2>Device 1</h2>
+		<h3 id='test'></h3>
+		<p id='device1_voltage'>Voltage = 0</p>
+		<p id='device1_power'>Current = 0</p>
+		<p id='device1_energy'>Energy = 0</p>
+		<button onclick="device(1,'ON')" id="myBtn" class='btn btn-success'>Switch On</button>
+		
+	        <button onclick="device(1,'OFF')" id="myBtn" class='btn btn-danger'>Switch Off</button>
+		
+		
+	    </div>
+	    <div class='col-md-6'>
+	        <h2>Device 2</h2>
+		<p id='device2_voltage'>Voltage = 0</p>
+		<p id='device2_power'>Power = 0</p>
+		<p id='device2_energy'>Energy = 0</p>
+		<button onclick="device(2,'ON')" id="myBtn" class='btn btn-success'>Switch On</button>
+		<button onclick="device(2,'OFF')" id="myBtn" class='btn btn-danger'>Switch Off</button>
+			
+	    </div>
+
+
+
+	</div>
+      <!--<iframe id="data" href="/data"></iframe>-->
+      
+   </div>
+</body>
+   
+</html>
+
+</div>
+</body>
+
+</html>
