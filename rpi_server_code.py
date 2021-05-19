@@ -1,3 +1,6 @@
+# @Author Talha Zafar
+# Basic server inteface for publishing real time information from serial ports on a webpage application
+
 from flask import Flask, render_template, send_file
 import datetime
 import time
