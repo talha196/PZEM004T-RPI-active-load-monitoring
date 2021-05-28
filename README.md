@@ -6,4 +6,5 @@ The Serial port, it's baud rate and parity check can be configured at the beginn
 
 This script parses through the UART (ttyS0) recieved packets and seperates the Voltage, Current and Power information recieved from a remote load monitoring device via Transciever module on 433Mhz band. It then publishes these results on the web application(.html file) which simply can be opened in the broswer once the python script is running and is hosting as a server. The Raspberry Pi hosts a star network topology here with it being a central node and hosting daughter nodes on different channels on the same frequency band. 
 
+The project code file contains the embedded script that runs at each monitoring and control node which was designed in house.
 Upto 2 devices are being hosted by this proof of concept example.
